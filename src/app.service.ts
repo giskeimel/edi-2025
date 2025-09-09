@@ -13,6 +13,10 @@ export class AppService {
     return 'Bye bye Gisele!';
   }
 
+  crearUsuario(): string {
+    return 'Usuario creado en el servicio';
+  }
+
 
 
 }
