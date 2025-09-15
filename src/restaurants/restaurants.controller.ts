@@ -7,10 +7,14 @@ export class RestaurantsController {
     }
 
 @Get()
-getRestaurants(): string {
-    return 'Lista de restaurantes';
+getRestaurants(){
+    return this.restaurantsService.getRestaurants();
   }
 
+@Get('list')
+getRestaurants2(): string {
+    return 'Lista de restaurantes';
+  }
 @Get(':id')
 getMenu(@Param('id') idRestaurant:string): string {
     return 'Menu del restaurante';
