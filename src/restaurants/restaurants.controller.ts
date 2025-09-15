@@ -15,9 +15,9 @@ getRestaurants(){
 getRestaurants2(): string {
     return 'Lista de restaurantes';
   }
-@Get(':id')
+@Get(':id') //  localhost:3000/restaurants/15
 getMenu(@Param('id') idRestaurant:string): string {
-    return 'Menu del restaurante';
+    return this.restaurantsService.getRestaurantById(idRestaurant);
   }
 
 
