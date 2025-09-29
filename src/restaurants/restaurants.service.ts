@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { RestaurantModel } from './RestaurantModel';
 
 @Injectable()
 export class RestaurantsService {
@@ -34,4 +35,21 @@ export class RestaurantsService {
         }
         return "REstaurante no encontrado";
     }
+
+    crearRestaurant(restaurant: RestaurantModel) : string{
+        
+        
+        let newRestaurant = {
+        "id": restaurant.id,
+        "name": restaurant.name, 
+        "address": restaurant.address, 
+        "phone": restaurant.phone, 
+
+        }
+        // Guardo los datos del restaurant nuevo en la lista
+        this.restaurants.push(newRestaurant);
+        
+        return "Restaurant creado correctamente";
+    }
+
 }
